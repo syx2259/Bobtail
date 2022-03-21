@@ -5,3 +5,7 @@ https://thrift.apache.org/docs/install/debian.html
 
 https://thrift-tutorial.readthedocs.io/en/latest/installation.html
 
+
+Start the l2 vm with network:
+
+qemu-system-x86_64 -enable-kvm -hda debian-11-generic-amd64.qcow2 -m 4096 -nographic
