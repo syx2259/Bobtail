@@ -5,6 +5,8 @@ https://thrift.apache.org/docs/install/debian.html
 
 https://thrift-tutorial.readthedocs.io/en/latest/installation.html
 
+https://cloudxlab.com/blog/creating-thrift-service/
+
 
 Start the l2 vm with network:
 
