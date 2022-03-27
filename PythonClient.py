@@ -10,6 +10,7 @@ host = "localhost"
 port = 9090
 
 import sys
+import time
 
 # your gen-py dir
 sys.path.append('../gen-py')
@@ -37,9 +38,16 @@ try:
     # Connect to server
     transport.open()
 
+    # startTime of RTT
+    startTime = time.time()
+    
     # Run showCurrentTimestamp() method on server
     currentTime = client.showCurrentTimestamp()
-    print(currentTime)
+    
+    # Calculate the RTT
+    endTime = time.time()
+    print("RTT: " + str(endTime - startTime))
+    print("Request result: " + currentTime)
 
     # Assume that you have a job which takes some time
     # but client sholdn't have to wait for job to finish
