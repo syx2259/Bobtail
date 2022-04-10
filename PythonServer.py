@@ -30,24 +30,41 @@ HIGH_MARK = 65
 # Server implementation
 class ExampleHandler:
     # Instance Selection Algorithm
-    def instanceSelection():
+#     def instanceSelection():
+#         num_delay = 0
+#         for i in range(M):
+#             startTime = time.time()
+#             time.sleep(0.001)
+#             endTime = time.time()
+#             if startTime - endTime > 0.01:
+#                 num_delay+=1
+#         if num_delay <= LOW_MARK:
+#             return 'GOOD'
+#         elif num_delay <= HIGH_MARK:
+#             return 'MAY USE NETWORK TEST'
+#         return 'BAD'
+    
+    # return current time stamp
+    def showCurrentTimestamp(self):
         num_delay = 0
-        for i in range(M):
+        t_start = time.time()
+        t_end = t_start + 60
+        while time.time() < t_end:
+            #for i in range(M):
             startTime = time.time()
             time.sleep(0.001)
             endTime = time.time()
             if startTime - endTime > 0.01:
                 num_delay+=1
+                print(str(time.time()-t_start) + ',' + str(num_delay))
+                print(num_delay)
         if num_delay <= LOW_MARK:
-            return 'GOOD'
+            print('GOOD')
         elif num_delay <= HIGH_MARK:
-            return 'MAY USE NETWORK TEST'
-        return 'BAD'
+            print('MAY USE NETWORK TEST')
+        print('BAD')
     
-    # return current time stamp
-    def showCurrentTimestamp(self):
         timeStamp = time.time()
-        print(instanceSelection())
         return str(timeStamp)
 
     # print something to string, wait 10 secs, than print something again
