@@ -51,6 +51,8 @@ class ExampleHandler:
         num_delay = 0
         t_start = time.time()
         t_end = t_start + 60
+        print('Start at: ' + str(t_start))
+        #f = open("rtt.txt", "w")
         while time.time() < t_end:
             #for i in range(M):
             startTime = time.time()
@@ -58,8 +60,10 @@ class ExampleHandler:
             endTime = time.time()
             if endTime - startTime > 0.01:
                 num_delay+=1
-                print(str(time.time()-t_start) + ',' + str(num_delay))
+                #f.write(str(time.time()-t_start) + ',' + str(num_delay)+ "\n")
                 print(num_delay)
+        #f.close()
+        print('End at: ' + str(t_end))
         if num_delay <= LOW_MARK:
             print('GOOD')
             return str(timeStamp)
