@@ -23,11 +23,31 @@ from thrift.transport import TTransport
 from thrift.protocol import TBinaryProtocol
 from thrift.server import TServer
 
+M = 600000
+LOW_MARK = 13
+HIGH_MARK = 65
+
 # Server implementation
 class ExampleHandler:
+    # Instance Selection Algorithm
+    def instanceSelection():
+        num_delay = 0
+        for i in range(M):
+            startTime = time.time()
+            time.sleep(0.001)
+            endTime = time.time()
+            if startTime - endTime > 0.01:
+                num_delay++
+        if num_delay <= LOW_MARK:
+            return 'GOOD'
+        elif num_delay <= HIGH_MARK:
+            return 'MAY USE NETWORK TEST'
+        return 'BAD'
+    
     # return current time stamp
     def showCurrentTimestamp(self):
         timeStamp = time.time()
+        print(instanceSelection())
         return str(timeStamp)
 
     # print something to string, wait 10 secs, than print something again
