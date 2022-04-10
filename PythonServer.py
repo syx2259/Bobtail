@@ -37,7 +37,7 @@ class ExampleHandler:
             time.sleep(0.001)
             endTime = time.time()
             if startTime - endTime > 0.01:
-                num_delay++
+                num_delay+=1
         if num_delay <= LOW_MARK:
             return 'GOOD'
         elif num_delay <= HIGH_MARK:
