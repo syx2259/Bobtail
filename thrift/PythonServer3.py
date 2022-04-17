@@ -34,7 +34,7 @@ class ExampleHandler:
     def showCurrentTimestamp(self):
         num_delay = 0
         print('Start at: ' + str(time.time()))
-        for i in range(M)
+        for i in range(M):
             startTime = time.time()
             time.sleep(0.001)
             endTime = time.time()
