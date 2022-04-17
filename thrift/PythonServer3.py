@@ -41,6 +41,7 @@ class ExampleHandler:
             if endTime - startTime > 0.01:
                 num_delay+=1
         print('End at: ' + str(time.time()))
+        print('Num of Delay: ' + str(num_delay))
         return str(num_delay)
     
 
