@@ -38,6 +38,7 @@ class ExampleHandler:
             startTime = time.time()
             time.sleep(0.001)
             endTime = time.time()
+            print(str(endTime-startTime))
             if endTime - startTime > 0.01:
                 num_delay+=1
         print('End at: ' + str(time.time()))
