@@ -52,7 +52,7 @@ def requestAll(hosts):
     with ThreadPoolExecutor(max_workers=6) as executor:
         index = 0
         for host in hosts:
-            futures = executor.submit(requestOne, [host, 9090, index])
+            futures = executor.submit(requestOne, host, 9090, index)
             futures_list.append(futures)
     
         for future in futures_list:
