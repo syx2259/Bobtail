@@ -26,7 +26,11 @@ For each experiment, you just need to go to each folder, download client folder 
 </ol>
 To run server:
 <ol>
-  <li>Go to each folder</li>
-  <li>Download client folder to client L1 VM</li>
-  <li>Download server folder to regular server L2 VM, server_target folder to target server L2 VM</li>
+  <li>In server folder, go into server folder</li>
+  <li>run `python3 PythonServer.py`</li>
+</ol>
+To run client:
+<ol>
+  <li>In server folder, go into client folder</li>
+  <li>run `python3 PythonClient.py`</li>
 </ol>
