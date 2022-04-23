@@ -27,7 +27,7 @@ For each experiment, you just need to go to each folder, download client folder 
 To run server:
 <ol>
   <li>In server folder, go into server folder</li>
-  <li>run `python3 PythonServer.py`</li>
+  <li>run <code>python3 PythonServer.py</code></li>
 </ol>
 To run client:
 <ol>
