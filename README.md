@@ -1,18 +1,16 @@
 # Bobtail
-
 <h2>
   Instruction
 </h2>
+<p>For this project, we have set up three different experiments. First we install thrift RPC server.</p>
+<h3>
+  Requirement  
+</h3>
+Follow the following links to install thrift.
+<ul>
+  <li>https://thrift.apache.org/docs/install/debian.html</li>
+  <li>https://thrift.apache.org/download</li>
+  <li>https://thrift-tutorial.readthedocs.io/en/latest/installation.html</li>
+</ul>
 
-https://thrift.apache.org/docs/install/debian.html
-
-
-https://thrift-tutorial.readthedocs.io/en/latest/installation.html
-
-https://cloudxlab.com/blog/creating-thrift-service/
-
-
-Start the l2 vm with network:
-
-qemu-system-x86_64 -enable-kvm -hda debian-11-generic-amd64.qcow2 -m 4096 -nographic
 
