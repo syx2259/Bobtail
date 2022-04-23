@@ -1,8 +1,8 @@
-# simpleThrift
+# Bobtail
 
-<h1>
+<h2>
   Instruction
-</h1>
+</h2>
 
 https://thrift.apache.org/docs/install/debian.html
 
