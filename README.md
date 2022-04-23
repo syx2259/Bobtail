@@ -32,5 +32,5 @@ To run server:
 To run client:
 <ol>
   <li>In server folder, go into client folder</li>
-  <li>run `python3 PythonClient.py`</li>
+  <li>run <code>python3 PythonClient.py</code></li>
 </ol>
