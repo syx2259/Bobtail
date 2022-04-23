@@ -34,23 +34,7 @@ def requestOne(host, port, index):
     protocol = TBinaryProtocol.TBinaryProtocol(transport)
     client = Example.Client(protocol)
     transport.open()
-    if index == 0:
-        f = open("rtt.txt", "w")
-        #f = open("rtt_one_cpu_intensive.txt", "w")
-        #f = open("rtt_two_cpu_intensive.txt", "w")
-        #f = open("rtt_three_cpu_intensive.txt", "w")
-        #f = open("rtt_four_cpu_intensive.txt", "w")
-        for x in range(100000):
-            startTime = time.time()
-            # Run showCurrentTimestamp() method on server
-            currentTime = client.showCurrentTimestamp()
-            endTime = time.time()
-            interval = endTime - startTime
-            f.write(str(interval) + "\n")
-        f.close()
-    else :
-        # Run showCurrentTimestamp() method on server
-        currentTime = client.showCurrentTimestamp()
+    currentTime = client.showCurrentTimestamp()
     transport.close()
     return "Finish work in " + host
 

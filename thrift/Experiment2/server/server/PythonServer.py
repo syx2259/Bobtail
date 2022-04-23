@@ -23,7 +23,6 @@ from thrift.transport import TTransport
 from thrift.protocol import TBinaryProtocol
 from thrift.server import TServer
 
-M = 600000
 LOW_MARK = 13
 HIGH_MARK = 65
 

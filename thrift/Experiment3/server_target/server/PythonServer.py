@@ -23,44 +23,26 @@ from thrift.transport import TTransport
 from thrift.protocol import TBinaryProtocol
 from thrift.server import TServer
 
-M = 600000
-LOW_MARK = 13
-HIGH_MARK = 65
+M = 50000
 
 # Server implementation
 class ExampleHandler:
     
     # return current time stamp
     def showCurrentTimestamp(self):
-        timeStamp = time.time()
-        #Bobtail algorithm
         num_delay = 0
-        t_start = time.time()
-        t_end = t_start + 900
-        print('Start at: ' + str(t_start))
-        f = open("delayFile_zero.txt", "w")
-#        f = open("delayFile_one.txt", "w")
-#        f = open("delayFile_two.txt", "w")
-#        f = open("delayFile_three.txt", "w")
-#        f = open("delayFile_four.txt", "w")
-        while time.time() < t_end:
+        #Bobtail algorithm
+        print('Start at: ' + str(time.time()))
+        for i in range(M):
             startTime = time.time()
             time.sleep(0.001)
             endTime = time.time()
+#            print(str(endTime-startTime))
             if endTime - startTime > 0.01:
                 num_delay+=1
-                f.write(str(time.time()-t_start) + ',' + str(num_delay)+ "\n")
-                print(num_delay)
-        f.close()
-        print('End at: ' + str(t_end))
-        if num_delay <= LOW_MARK:
-            print('GOOD')
-            return str(timeStamp)
-        elif num_delay <= HIGH_MARK:
-            print('MAY USE NETWORK TEST')
-            return str(timeStamp)
-        print('BAD')
-        return str(timeStamp)
+        print('End at: ' + str(time.time()))
+        print('Num of Delay: ' + str(num_delay))
+        return str(num_delay)
     
 
     # print something to string, wait 10 secs, than print something again

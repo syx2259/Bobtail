@@ -35,22 +35,14 @@ def requestOne(host, port, index):
     client = Example.Client(protocol)
     transport.open()
     if index == 0:
-        f = open("rtt.txt", "w")
-        #f = open("rtt_one_cpu_intensive.txt", "w")
-        #f = open("rtt_two_cpu_intensive.txt", "w")
-        #f = open("rtt_three_cpu_intensive.txt", "w")
-        #f = open("rtt_four_cpu_intensive.txt", "w")
-        for x in range(100000):
-            startTime = time.time()
-            # Run showCurrentTimestamp() method on server
-            currentTime = client.showCurrentTimestamp()
-            endTime = time.time()
-            interval = endTime - startTime
-            f.write(str(interval) + "\n")
+        f = open("goodNode.txt", "w")
+        #f = open("badNode.txt", "w")
+        bobtailResult = client.showCurrentTimestamp()
+        f.write(bobtailResult + "\n")
         f.close()
     else :
         # Run showCurrentTimestamp() method on server
-        currentTime = client.showCurrentTimestamp()
+        bobtailResult = client.showCurrentTimestamp()
     transport.close()
     return "Finish work in " + host
 
@@ -62,11 +54,10 @@ def requestAll(hosts):
         for host in hosts:
             futures = executor.submit(requestOne, host, 9090, index)
             futures_list.append(futures)
-            index += 1
-
+    
         for future in futures_list:
             try:
-                result = future.result(timeout=30)
+                result = future.result(timeout=60)
                 results.append(result)
             except Exception:
                 results.append(None)
@@ -74,13 +65,14 @@ def requestAll(hosts):
 
 if __name__ == "__main__":
     try:
-        hosts = ("10.0.2.21", "10.0.2.22", "10.0.2.23", "10.0.2.24", "10.0.2.25")
-        #hosts = ("10.0.2.21", "10.0.2.23", "10.0.2.24", "10.0.2.25")
-        #hosts = ("10.0.2.21", "10.0.2.24", "10.0.2.25")
-        #hosts = ("10.0.2.21", "10.0.2.22")
-        #requestOne("10.0.2.21", 9090, 0)
-        results = requestAll(hosts)
-        for result in results:
-            print(result)
+        #Good node test
+#         hosts = ("10.0.2.21", "10.0.2.22", "10.0.2.23", "10.0.2.24", "10.0.2.25")
+#         results = requestAll(hosts)
+#         for result in results:
+#             print(result)
+
+        #Bad node test
+        result = requestOne("10.0.2.21", 9090, 0)
+        print(result)
     except Thrift.TException as tx:
         print('Something went wrong : %s' % (tx.message))
