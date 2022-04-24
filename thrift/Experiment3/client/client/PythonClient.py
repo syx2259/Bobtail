@@ -54,6 +54,7 @@ def requestAll(hosts):
         for host in hosts:
             futures = executor.submit(requestOne, host, 9090, index)
             futures_list.append(futures)
+            index+=1
     
         for future in futures_list:
             try:
