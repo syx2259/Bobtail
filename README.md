@@ -2,7 +2,7 @@
 <h2>
   Instruction
 </h2>
-<p>For this project, we have set up three different experiments. First we install thrift RPC server.</p>
+<p>For this project, we have set up three different experiments. First we need to install thrift RPC server.</p>
 <h3>
   Requirements
 </h3>
