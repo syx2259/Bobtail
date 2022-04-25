@@ -25,7 +25,7 @@ Then we need to setup 2 VM machines in GCP. Following the instructions below.
 <b>Because the default username/password is unknown, you can use <a href="https://freelinuxtutorials.com/fixing-kvm-guest-virsh-console-hangs-at-escape-character/">Guestfish</a> to reset the password.</b>
 
 <h3>
-  Instructions for repeat experiments
+  Instruction for repeat experiments
 </h3>
 For each experiment, you just need to go to each folder, download client folder to client L1 VM and download
 <ol>
