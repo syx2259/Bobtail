@@ -2,7 +2,7 @@
 <h2>
   Instruction
 </h2>
-<p>For this project, we have set up three different experiments. First we need to install thrift RPC server.</p>
+<p>For this project, we have set up three different experiments. First, we need to set up 1 L1 VM and 5 L2 VMs within it. Then we need to install thrift RPC server on every single L2 VM. Besides, we need a client machine as well, you have to make sure the client machine is in the same network.</p>
 <h3>
   Requirements
 </h3>
@@ -12,11 +12,20 @@ Follow the following links to install thrift.
   <li>https://thrift.apache.org/download</li>
   <li>https://thrift-tutorial.readthedocs.io/en/latest/installation.html</li>
 </ul>
-Then we need to setup 2 VM machines in GCP.
-To do...
+Then we need to setup 2 VM machines in GCP. Following the instructions below.
+
+<ul>
+  <li>Create L1 VM: https://cloud.google.com/compute/docs/instances/nested-virtualization/enabling</li>
+  <li>Create L2 VM: https://cloud.google.com/compute/docs/instances/nested-virtualization/creating-nested-vms</li>
+</ul>
+
+<h4>Note</h4>
+<b>If you can't download the L2 VM images in the document above, you can instead download <a href="https://cloud.debian.org/images/cloud/bullseye/latest/debian-11-generic-amd64.qcow2">this</a>.</b>
+<br>
+<b>Because the default username/password is unknown, you can use <a href="https://freelinuxtutorials.com/fixing-kvm-guest-virsh-console-hangs-at-escape-character/">Guestfish</a> to reset the password.</b>
 
 <h3>
-  Instruction for repeat experiments
+  Instructions for repeat experiments
 </h3>
 For each experiment, you just need to go to each folder, download client folder to client L1 VM and download
 <ol>
