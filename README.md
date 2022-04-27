@@ -29,7 +29,7 @@ Then follow the following links to install thrift in All L2 server machine and L
 <h3>
   Instruction for repeat experiments
 </h3>
-For each experiment, you just need to go to each folder, download client folder to client L1 VM and download
+For each experiment:
 <ol>
   <li>Go to each folder</li>
   <li>Download client folder to client L1 VM</li>
