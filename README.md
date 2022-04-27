@@ -6,18 +6,20 @@
 <h3>
   Requirements
 </h3>
-Follow the following links to install thrift.
+First we need to setup 2 VM machines in GCP. Following the instructions below.
+<ul>
+  <li>Create L1 VM: https://cloud.google.com/compute/docs/instances/nested-virtualization/enabling</li>
+  <li>Create L2 VM: https://cloud.google.com/compute/docs/instances/nested-virtualization/creating-nested-vms</li>
+</ul>
+Then follow the following links to install thrift in All L2 server machine and L1 client machine.
 <ul>
   <li>https://thrift.apache.org/docs/install/debian.html</li>
   <li>https://thrift.apache.org/download</li>
   <li>https://thrift-tutorial.readthedocs.io/en/latest/installation.html</li>
 </ul>
-Then we need to setup 2 VM machines in GCP. Following the instructions below.
 
-<ul>
-  <li>Create L1 VM: https://cloud.google.com/compute/docs/instances/nested-virtualization/enabling</li>
-  <li>Create L2 VM: https://cloud.google.com/compute/docs/instances/nested-virtualization/creating-nested-vms</li>
-</ul>
+
+
 
 <h4>Note</h4>
 <b>If you can't download the L2 VM images in the document above, you can instead download <a href="https://cloud.debian.org/images/cloud/bullseye/latest/debian-11-generic-amd64.qcow2">this</a>.</b>
